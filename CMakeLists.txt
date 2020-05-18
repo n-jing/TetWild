@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.3)
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
+
+
 ################################################################################
 
 
@@ -32,6 +34,14 @@ option(LIBIGL_WITH_OPENGL_GLFW      "Use GLFW"           OFF)
 option(LIBIGL_WITH_VIEWER           "Use OpenGL viewer"  OFF)
 #geogram
 option(GEOGRAM_WITH_TRIANGLE        "Use Triangle"       OFF)
+
+
+
+include_directories(/home/jing/Workspace/Project/CGAL-4.13.2/CGAL_DIR/usr/local/include)
+link_directories(/home/jing/Workspace/Project/CGAL-4.13.2/CGAL_DIR/usr/local/lib /usr/lib/x86_64-linux-gnu)
+link_libraries(gmp gmpxx mpfr CGAL boost_thread)
+
+
 
 if(TETWILD_WITH_HUNTER)
 	# Needs to be set before the main project... argh =/
@@ -139,7 +149,7 @@ target_link_libraries(libTetWild
 		pymesh::pymesh
 		spdlog::spdlog
 	PRIVATE
-		igl::cgal
+		# igl::cgal
 		warnings::all
 )
 set_target_properties(libTetWild PROPERTIES OUTPUT_NAME "tetwild")
@@ -156,7 +166,7 @@ add_executable(TetWild src/main.cpp)
 target_link_libraries(TetWild
 		libTetWild
 		CLI11::CLI11
-		igl::cgal
+		# igl::cgal
 		warnings::all
 )
 target_include_directories(TetWild PRIVATE src)
