@@ -149,7 +149,7 @@ target_link_libraries(libTetWild
 		pymesh::pymesh
 		spdlog::spdlog
 	PRIVATE
-		# igl::cgal
+		igl::cgal
 		warnings::all
 )
 set_target_properties(libTetWild PROPERTIES OUTPUT_NAME "tetwild")
@@ -166,7 +166,7 @@ add_executable(TetWild src/main.cpp)
 target_link_libraries(TetWild
 		libTetWild
 		CLI11::CLI11
-		# igl::cgal
+		igl::cgal
 		warnings::all
 )
 target_include_directories(TetWild PRIVATE src)
