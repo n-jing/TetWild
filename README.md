@@ -1,4 +1,7 @@
 # TetWild - Tetrahedral Meshing in the Wild
+1. mkdir build && cd build && cmake .. -DCMAKE_BUILD_TYPE=Release
+2. annotation igl::cgal and link cgal manual
+
 ![](docs/teaser.png)
 Yixin Hu, Qingnan Zhou, Xifeng Gao, Alec Jacobson, Denis Zorin, Daniele Panozzo.
 ACM Transactions on Graphics (SIGGRAPH 2018).
